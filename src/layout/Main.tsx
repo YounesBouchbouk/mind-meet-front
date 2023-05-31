@@ -28,10 +28,9 @@ export function MainLayout({ children }: IMainLayoutProps) {
     <Wrapper>
       <Toaster />
 
-      {/* //Header */}
       <Header />
 
-      <div className="flex flex-col h-full overflow-hidden scrollbar-hide top-0 right-0 ">
+      <div className="flex flex-col h-full overflow-hidden scrollbar-hide top-0 right-0 bg-f9 text-mainFontColor">
         {children}
       </div>
     </Wrapper>

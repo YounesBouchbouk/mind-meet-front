@@ -1,7 +1,8 @@
 import React from "react";
-import logo from "../src/images/mindmeetlogo.png";
+import logo from "@images/logoMindMeet-removebg-preview.png";
 import Image from "next/image";
 import Link from "next/link";
+
 const LoginPage: React.FC = () => {
   return (
     <div className="min-h-screen flex">
@@ -9,11 +10,13 @@ const LoginPage: React.FC = () => {
         className="w-1/2 bg-cover bg-center bg-"
         style={{ backgroundImage: "url('')" }}
       >
-        <div className="flex justify-center items-center h-full bg-slate-200">
+        <div className="flex flex-col  justify-center items-center h-full bg-f9">
+          <p className="text-2xl font-bold text-center px-4 text-mainC2">
+            Step into a world of self-discovery and growth. Login to embark on a
+            transformative journey towards a healthier mind.
+          </p>
           <div className="text-center">
             <Image alt="mindmeetlogo" src={logo} />
-            <h1 className="text-4xl text-black mb-6">Welcome to Mind Meet</h1>
-            <p className="text-xl text-black">Please login to start</p>
           </div>
         </div>
       </div>
@@ -41,9 +44,15 @@ const LoginPage: React.FC = () => {
           </div>
           <button
             type="submit"
+            // onClick={() => router.push("/")}
             className="w-full bg-blue-600 text-white py-2 rounded mb-6"
           >
-            Login
+            <Link
+              href={"/"}
+              className="  bg-blue-600 text-white py-2 rounded mb-6"
+            >
+              Login
+            </Link>
           </button>
           <div className="flex flex-col gap-4 mt-8 justify-between items-center">
             <button
@@ -62,7 +71,7 @@ const LoginPage: React.FC = () => {
 
           <div className="flex flex-col gap-4 mt-8 justify-between items-center ">
             <Link href={"/signup"}>
-              <p className=" text-xl underline">or juin us</p>
+              <p className=" text-xl underline">or join us</p>
             </Link>
           </div>
         </form>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../src/images/mindmeetlogo.png";
 import Link from "next/link";
+import logo from "@images/logoMindMeet-removebg-preview.png";
 
 const SignupPage: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,12 +17,14 @@ const SignupPage: React.FC = () => {
         style={{ backgroundImage: "url('path/to/your/background/image.jpg')" }}
       >
         <div className="flex justify-center items-center h-full bg-slate-200">
-          <div className="text-center">
-            <Image alt="mindmeetlogo" src={logo} />
-            <h1 className="text-4xl text-black mb-6">Welcome to Mind Meet</h1>
-            <p className="text-xl text-black">
-              SignUp with your information to start
+          <div className="flex flex-col  justify-center items-center h-full bg-f9">
+            <p className="text-2xl font-bold text-center px-4 text-mainC2">
+              Embrace a new beginning. Sign up and embark on a journey of
+              self-care and personal growth, one step at a time.
             </p>
+            <div className="text-center">
+              <Image alt="mindmeetlogo" src={logo} />
+            </div>
           </div>
         </div>
       </div>
@@ -125,7 +127,61 @@ const SignupPage: React.FC = () => {
             </div>
             <div className="text-gray-700 overflow-y-auto max-h-72">
               {/* Replace with the actual policies text */}
-              <p>Bla bla bla bla policies</p>
+              <ul>
+                <li>
+                  Privacy Policy: Outlining how user data is collected, stored,
+                  and protected, as well as how it may be used for providing
+                  personalized services and improving the user experience.
+                </li>
+                <li>
+                  Terms of Service: Defining the rights, responsibilities, and
+                  acceptable use of the platform, including guidelines for user
+                  behavior, content sharing, and intellectual property rights.
+                </li>
+                <li>
+                  Cookie Policy: Explaining the use of cookies or similar
+                  technologies for tracking user preferences, enhancing website
+                  functionality, and delivering targeted advertisements.
+                </li>
+                <li>
+                  Data Retention Policy: Detailing the duration for which user
+                  data will be stored, the purpose of retention, and the
+                  processes for data deletion or anonymization.
+                </li>
+                <li>
+                  Communication Policy: Describing how the platform may
+                  communicate with users, including email notifications,
+                  newsletters, or important service updates, and providing
+                  options for opting in or out of such communications.
+                </li>
+                <li>
+                  User Conduct Policy: Establishing guidelines for appropriate
+                  user behavior, prohibiting harassment, discrimination, or any
+                  form of harmful or unlawful activity on the platform.
+                </li>
+                <li>
+                  Refund and Cancellation Policy: Outlining the conditions,
+                  procedures, and timelines for refunds or cancellations of any
+                  paid services or subscriptions.
+                </li>
+                <li>
+                  Dispute Resolution Policy: Explaining the methods for
+                  resolving disputes between the platform and the user, such as
+                  mediation, arbitration, or legal proceedings.
+                </li>
+                <li>
+                  Disclaimer of Liability: Clarifying that the platform is not
+                  responsible for any damages, losses, or liabilities arising
+                  from the use of the services or reliance on the provided
+                  information.
+                </li>
+                <li>
+                  Modification of Policies: Indicating that the platform
+                  reserves the right to update or modify the policies, and
+                  informing users about the process of notifying them about any
+                  changes made.
+                </li>
+              </ul>
             </div>
           </div>
           <div

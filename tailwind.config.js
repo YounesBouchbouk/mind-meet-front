@@ -23,6 +23,9 @@ module.exports = {
         inactive: "#CCCCCC",
         gray2: "#828282",
         f9: "#F9F9F9",
+        mainC: "#4d7ab2",
+        mainC2: "#2a4686",
+        mainFontColor: "#293961",
       },
       animation: {
         "spin-slow": "spin 3s linear infinite",

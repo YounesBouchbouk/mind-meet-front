@@ -21,7 +21,7 @@ const Index = (props: Props) => {
           return (
             <p
               key={gr}
-              className="min-w-[100px]  hover:bg-gray-100 cursor-pointer rounded-2xl text-center py-2 bg-gray-200 text-small"
+              className="min-w-[100px]  hover:bg-gray-100 cursor-pointer rounded-2xl font-bold text-center py-2 bg-gray-200 text-small"
             >
               {gr}
             </p>
@@ -34,7 +34,7 @@ const Index = (props: Props) => {
           return (
             <p
               key={cat}
-              className="min-w-[100px] hover:bg-gray-100 cursor-pointer rounded-2xl text-center py-2 bg-gray-200 text-small"
+              className="min-w-[100px] hover:bg-gray-100 font-bold cursor-pointer rounded-2xl text-center py-2 bg-gray-200 text-small"
             >
               {cat}
             </p>
