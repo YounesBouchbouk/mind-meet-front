@@ -5,7 +5,7 @@ import { MainContainer, ChatContainer, MessageList, Message, MessageInput, Typin
 
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
-  "role": "system", "content": "Act like you're a psychiatre and want's to test my mental health , let's make adialog so ask me question by question maximum 10 questions "
+  "role": "system", "content": "Act like you're a psychiatre and want's to test my mental health , let's make adialog so ask me question by question maximum 5 questions "
 }
 
 const Index =  () => {

@@ -7,6 +7,7 @@ import TheRoleofResilience from "@images/The Role of Resilience in Overcoming Ad
 import UnlockingtheSecretsofSelfCompassion from "@images/Unlocking the Secrets of Self-Compassion.jpeg";
 import { StaticImageData } from "next/image";
 import ThePowerOfPosThink from "@images/The Power of Positive Thinking.jpg";
+
 export type ArticleType = {
   title: string;
   subTitle: string;

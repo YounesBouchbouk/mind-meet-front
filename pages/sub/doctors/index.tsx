@@ -4,6 +4,7 @@ import Filter from "@components/Filter";
 import DoctorsList from "@components/DoctorsList";
 import { MainLayout } from "@/layout/Main";
 import { ReactElement } from "react";
+
 const Articles = () => {
   return (
     <div className="w-full h-screen bg-slate-50 gap-8  flex justify-center items-center px-10 ">

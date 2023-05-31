@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -14,8 +15,19 @@ const Index = (props: Props) => {
     "self-esteem",
   ]);
 
+  const variantsRightToLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 50 },
+  };
+
   return (
-    <div className="w-full p-2">
+    <motion.div
+      initial="hidden"
+      transition={{ duration: 1, delay: 0.3 }}
+      animate="visible"
+      variants={variantsRightToLeft}
+      className="w-full p-2"
+    >
       <div className="w-full flex gap-3 justify-start  items-center py-4 border-b-2">
         {gender.map((gr) => {
           return (
@@ -41,7 +53,7 @@ const Index = (props: Props) => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

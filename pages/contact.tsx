@@ -1,13 +1,29 @@
 import { MainLayout } from "@/layout/Main";
 import React from "react";
 import { ReactElement } from "react";
+import { motion } from "framer-motion";
 
 const contact = () => {
+  const variantsLeftToRight = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
+  const variantsRightToLeft = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: 100 },
+  };
   return (
     <section className="relative z-10 overflow-hidden bg-white py-20 lg:py-[120px]">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap lg:justify-between">
-          <div className="w-full px-4 lg:w-1/2 xl:w-6/12 ">
+          <motion.div
+            initial="hidden"
+            transition={{ duration: 1, delay: 0.3 }}
+            animate="visible"
+            variants={variantsLeftToRight}
+            className="w-full px-4 lg:w-1/2 xl:w-6/12 "
+          >
             <div className="mb-12 max-w-[570px] lg:mb-0">
               <span className="text-primary mb-4 block text-base font-semibold">
                 Contact Us
@@ -80,8 +96,14 @@ const contact = () => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-full px-4 lg:w-1/2 xl:w-5/12 ">
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            transition={{ duration: 1, delay: 0.3 }}
+            animate="visible"
+            variants={variantsRightToLeft}
+            className="w-full px-4 lg:w-1/2 xl:w-5/12 "
+          >
             <div className="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
               <form>
                 <div className="mb-6">
@@ -930,7 +952,7 @@ const contact = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

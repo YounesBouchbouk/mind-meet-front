@@ -1,16 +1,39 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
 import UserNot from "@images/userNot.jpg";
 import Image from "next/image";
 import { ArticleType } from "..";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+
 type Props = {
   article: ArticleType;
 };
+const squareVariants = {
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+  hidden: { opacity: 0, y: 5 },
+};
 
-const index = ({ article }: Props) => {
+const Index = ({ article }: Props) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
   return (
-    <div className="flex items-center gap-4 justify-between w-full py-4 bg-white rounded-lg">
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={squareVariants}
+      className="flex items-center gap-4 justify-between w-full py-4 bg-white rounded-lg"
+    >
       <div className="flex-shrink-0 w-[300px]">
         <Image
           src={article.image}
@@ -47,8 +70,8 @@ const index = ({ article }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default index;
+export default Index;

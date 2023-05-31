@@ -19,7 +19,7 @@ export type DoctorType = {
   image: StaticImageData;
 };
 const Index = (props: Props) => {
-  const [doctors, setDoctorsList] = useState<DoctorType[]>([
+  const [doctors] = useState<DoctorType[]>([
     {
       name: "Dr. John Smith",
       yearsOfExperience: "10",

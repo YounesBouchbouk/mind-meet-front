@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { DoctorType } from "..";
 import Star from "@images/Star-Icon-987hjfd.png";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
 type Props = {
   doctor: DoctorType;
 };
 
 const Index = ({ doctor }: Props) => {
+  const squareVariants = {
+    visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
+    hidden: { opacity: 0, y: 5 },
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="flex flex-col items-center gap-4 justify-between w-full py-2 bg-white rounded-lg">
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      variants={squareVariants}
+      className="flex flex-col items-center gap-4 justify-between w-full py-2 bg-white rounded-lg"
+    >
       <div className="flex-shrink-0 w-full">
         <Image
           src={doctor.image}
@@ -52,7 +76,7 @@ const Index = ({ doctor }: Props) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
