@@ -89,7 +89,7 @@ const Index =  () => {
           <ChatContainer>       
             <MessageList 
               scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing" /> : null}
+              typingIndicator={isTyping ? <TypingIndicator content="You're meet is typing" /> : null}
             >
               {messages.map((message, i) => {
                 console.log(message)
