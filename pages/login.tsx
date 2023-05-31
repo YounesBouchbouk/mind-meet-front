@@ -2,25 +2,54 @@ import React from "react";
 import logo from "@images/logoMindMeet-removebg-preview.png";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const LoginPage: React.FC = () => {
+  const variantTopToB = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: -50 },
+  };
+
+  const variantTopToT = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 50 },
+  };
+
   return (
-    <div className="min-h-screen flex">
+    <motion.div className="min-h-screen flex">
       <div
         className="w-1/2 bg-cover bg-center bg-"
         style={{ backgroundImage: "url('')" }}
       >
         <div className="flex flex-col  justify-center items-center h-full bg-f9">
-          <p className="text-2xl font-bold text-center px-4 text-mainC2">
+          <motion.p
+            initial="hidden"
+            transition={{ duration: 1, delay: 0.3 }}
+            animate="visible"
+            variants={variantTopToB}
+            className="text-2xl font-bold text-center px-4 text-mainC2"
+          >
             Step into a world of self-discovery and growth. Login to embark on a
             transformative journey towards a healthier mind.
-          </p>
-          <div className="text-center">
+          </motion.p>
+          <motion.div
+            initial="hidden"
+            transition={{ duration: 1, delay: 0.3 }}
+            animate="visible"
+            variants={variantTopToT}
+            className="text-center"
+          >
             <Image alt="mindmeetlogo" src={logo} />
-          </div>
+          </motion.div>
         </div>
       </div>
-      <div className="w-1/2 flex justify-center items-center">
+      <motion.div
+        initial="hidden"
+        transition={{ duration: 1, delay: 0.3 }}
+        animate="visible"
+        variants={variantTopToT}
+        className="w-1/2 flex justify-center items-center"
+      >
         <form className="w-96">
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-700 mb-2">
@@ -75,8 +104,8 @@ const LoginPage: React.FC = () => {
             </Link>
           </div>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

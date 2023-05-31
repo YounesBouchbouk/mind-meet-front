@@ -5,6 +5,8 @@ import type { AppProps } from "next/app";
 import "@styles/output.css";
 import { SWRConfig } from "swr";
 import toast from "react-hot-toast";
+import Head from "next/head";
+
 // import Script from "next/script";
 // import useStore from '@/store/useStore'
 type NextPageWithLayout = NextPage & {
@@ -21,6 +23,22 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
+      <Head>
+        <title>MindMeet</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Take control of your mental well-being with our innovative online chatbot. Assess your mental health, receive personalized feedback, and get recommendations for professional help if needed. Our chatbot provides a supportive and confidential environment to help you understand your emotions, manage stress, and promote your overall mental wellness. Start your journey towards a healthier mind today."
+        />
+
+        <meta
+          name="keywords"
+          content="mental health, chatbot, doctor, articles, well-being"
+        />
+        <meta name="author" content="Your Name or Your Company Name" />
+        <link rel="icon" href="/images/logoMindMeet.png" />
+      </Head>
       <SWRConfig
         value={{
           onError: (error: any) => {
