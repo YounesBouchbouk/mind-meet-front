@@ -5,10 +5,7 @@ import Logo from "@images/logoMindMeet-removebg-preview.png";
 const Index = () => {
   return (
     <div className="w-full sticky top-0 left-0 right-0 z-50 ">
-      <div className="w-full py-1 bg-mainC text-white font-bold font-mono">
-        <p className="text-center">Online Free mental health Test </p>
-      </div>
-      <div className="w-full py-2  bg-white/60 flex justify-between items-center border-b-2 border-black shadow-md  h-[80px]   ">
+      <div className="w-full py-2  bg-white/60 flex justify-between items-center  border-black shadow-md  h-[80px]   ">
         <div className=" text-center py-2 w-[200px] px-5">
           <Image
             src={Logo}
